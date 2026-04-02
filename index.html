@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Browser tab title -->
-    <title>Atandrit Chatterjee | Portfolio</title>
+    <title>Atandrit Chatterje</title>
 
-    <!-- Favicon: emoji rendered as an SVG inline -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>" />
+    <!-- Favicon -->
+    <link rel="icon" href="assets/ac-monogram.jpg" type="image/jpg" />
 
     <!-- Google Fonts: Inter for body text, Poppins for headings -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,41 +25,67 @@
 <body>
 
     <!-- ===================== HEADER ===================== -->
-    <!-- Sticky top bar with site name and navigation links -->
+    <!-- Sticky bar: monogram logo, nav links, resume button, theme toggle -->
     <header>
-        <h1>Atandrit Chatterjee</h1>
+        <a href="#hero" class="logo">Atandrit Chatterjee</a>
 
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+
+        <!-- Right side actions -->
+        <div class="header-actions">
+            <a href="assets/resume.pdf" download class="resume-btn">Resume</a>
+            <button id="themeToggle">Dark Mode</button>
+        </div>
     </header>
 
     <!-- ===================== MAIN CONTENT ===================== -->
     <main>
 
-        <!-- HERO: First thing the visitor sees — name, role, CTA buttons -->
+        <!-- HERO: Full-screen opening section -->
         <section id="hero">
-            <div class="hero-badge">Available for work &rarr;</div>
-            <h2>Hi, I'm Atandrit</h2>
-            <p class="hero-role">Full Stack Developer</p>
-            <p class="hero-desc">Building modern web experiences with clean code and great design.</p>
 
-            <!-- Call-to-action buttons -->
-            <div class="hero-buttons">
-                <a href="#projects">View My Work</a>
-                <a href="#contact">Get In Touch</a>
+            <!-- Animated particle background — drawn on canvas by script.js -->
+            <canvas id="particleCanvas"></canvas>
+
+            <div class="hero-content">
+                <div class="hero-badge">Available for work &rarr;</div>
+
+                <h2>Hi, I'm Atandrit</h2>
+
+                <!-- Role text cycles through values via typewriter effect in script.js -->
+                <p class="hero-role">
+                    <span id="typedRole"></span><span class="type-cursor">|</span>
+                </p>
+
+                <p class="hero-desc">Building modern web experiences with clean code and great design.</p>
+
+                <!-- Call-to-action buttons -->
+                <div class="hero-buttons">
+                    <a href="#projects">View My Work</a>
+                    <a href="assets/resume.pdf" download>Download Resume</a>
+                    <a href="#contact">Get In Touch</a>
+                </div>
+
+                <!-- Animated line that bounces to hint the user to scroll -->
+                <div class="scroll-hint">
+                    <span>Scroll</span>
+                    <div class="scroll-line"></div>
+                </div>
             </div>
+
         </section>
 
-        <!-- ABOUT: Profile photo, bio paragraphs, and skills list -->
-        <section id="about">
+        <!-- ABOUT: Animates in when scrolled into view (data-animate) -->
+        <section id="about" data-animate>
             <h2>About Me</h2>
 
             <div class="about-content">
                 <!-- Profile picture -->
-                <img src="img/pfp.jpg" alt="Atandrit's profile picture" width="200" height="180" />
+                <img src="assets/pfp.jpg" alt="Atandrit's profile picture" width="220" height="220" />
 
                 <!-- Bio and skills -->
                 <div class="about-text">
@@ -73,76 +98,81 @@
                         foundation before moving into React.
                     </p>
 
-                    <!-- Skills rendered as pill badges via CSS -->
                     <h3>Skills</h3>
+                    <!-- Skill pills rendered dynamically by script.js -->
+                    <ul id="skillsList"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS: Cards rendered dynamically from data array in script.js -->
+        <section id="projects" data-animate>
+            <h2>My Projects</h2>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+
+        <!-- CONTACT: Two-column layout — form on left, links on right -->
+        <section id="contact" data-animate>
+            <h2>Get In Touch</h2>
+
+            <div class="contact-layout">
+
+                <!-- Left: contact form -->
+                <div class="contact-form-wrapper">
+                    <p>Have a project in mind or just want to say hi?</p>
+
+                    <!-- Form submission and validation handled by script.js -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your@email.com" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Write your message here..."></textarea>
+                        </div>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <!-- Hidden by default — shown by JS after successful submission -->
+                    <p class="form-success" id="formSuccess">
+                        Thanks for reaching out! I'll get back to you soon ✓
+                    </p>
+                </div>
+
+                <!-- Right: direct contact links with labels -->
+                <div class="contact-links">
+                    <h3>Or reach me directly</h3>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React (coming soon)</li>
+                        <li>
+                            <a href="mailto:atandrit04chatterjee@gmail.com">
+                                <span class="link-label">Email</span>
+                                atandrit04chatterjee@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/atandritC/" target="_blank">
+                                <span class="link-label">GitHub</span>
+                                github.com/atandritC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/atandrit-chatterjee/" target="_blank">
+                                <span class="link-label">LinkedIn</span>
+                                linkedin.com/in/atandrit-chatterjee
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS: Cards linking to individual projects -->
-        <section id="projects">
-            <h2>My Projects</h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>A personal portfolio to showcase my skills and projects. Built with HTML, CSS, and JS.</p>
-                    <a href="#">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Weather App</h3>
-                    <p>A weather app that fetches live data based on your city. Built with JavaScript and a public API.</p>
-                    <a href="#">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>To-Do List</h3>
-                    <p>A clean task manager with local storage support so your tasks survive page refresh.</p>
-                    <a href="#">View Project</a>
-                </div>
 
             </div>
-        </section>
-
-        <!-- CONTACT: Message form and direct social links -->
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Have a project in mind or just want to say hi? Reach out through any of these:</p>
-
-            <!-- Contact form — submission handled by script.js -->
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your name" />
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="your@email.com" />
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Write your message here..."></textarea>
-                </div>
-
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Direct contact links -->
-            <ul>
-                <li><a href="mailto:atandrit04chatterjee@gmail.com">atandrit04chatterjee@gmail.com</a></li>
-                <li><a href="https://github.com/atandritC/" target="_blank">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/atandrit-chatterjee/" target="_blank">LinkedIn</a></li>
-            </ul>
         </section>
 
     </main>
@@ -150,9 +180,14 @@
     <!-- ===================== FOOTER ===================== -->
     <footer>
         <p>Designed &amp; Built by Atandrit &copy; 2026</p>
+        <div class="footer-links">
+            <a href="https://github.com/atandritC/" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/atandrit-chatterjee/" target="_blank">LinkedIn</a>
+            <a href="mailto:atandrit04chatterjee@gmail.com">Email</a>
+        </div>
     </footer>
 
-    <!-- Main JavaScript file — loaded last so all HTML elements exist first -->
+    <!-- Main JavaScript — loaded last so all HTML elements exist first -->
     <script src="script.js"></script>
 
 </body>
