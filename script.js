@@ -7,7 +7,7 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React (soon)', 'Git', 'Figma'];
 const projects = [
     {
         title: 'Portfolio Website',
-        description: 'A personal portfolio with scroll animations, dark mode, particle background, and live GitHub API integration.',
+        description: 'A personal portfolio with scroll animations, dark mode, and a particle canvas background.',
         tags: ['HTML', 'CSS', 'JavaScript'],
         link: '#',
         github: 'https://github.com/atandritC/'
@@ -259,24 +259,3 @@ contactForm.addEventListener('submit', event => {
     contactForm.style.display = 'none';
     formSuccess.style.display = 'block';
 });
-
-
-/* ============================================================
-   GITHUB API
-   Fetches live repo/follower count and updates the hero description.
-   ============================================================ */
-
-async function loadGithubStats() {
-    try {
-        const response = await fetch('https://api.github.com/users/atandritC');
-        const data = await response.json();
-        if (data.public_repos !== undefined && data.followers !== undefined) {
-            document.querySelector('.hero-desc').textContent =
-                `${data.public_repos} public repos · ${data.followers} followers on GitHub`;
-        }
-    } catch (error) {
-        console.log('GitHub API unavailable:', error);
-    }
-}
-
-loadGithubStats();
