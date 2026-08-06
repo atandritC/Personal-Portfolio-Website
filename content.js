@@ -27,20 +27,20 @@ window.SITE_CONTENT = {
   "availability": {
     "show": true,
     "status": "open",
-    "headline": "Open to work",
+    "headline": "Seeking an Associate Product Manager opportunity",
     "detail": ""
   },
   "profile": {
     "name": "Atandrit Chatterjee",
     "initials": "AC",
-    "title": "",
-    "transition": "An Aspiring Product Manager",
-    "location": "Pune, India",
+    "title": "Available for immediate joining",
+    "transition": "Software Engineer transitioning into Product Management",
+    "location": "Based in Pune • Open to relocation",
     "email": "atandrit04chatterjee@gmail.com",
     "phone": "+91 95064 11839",
     "photo": "assets/pfp.jpg",
     "greeting": "Atandrit Chatterjee",
-    "summary": "I turn half-formed requirements into things that ship. For nearly two years at Amdocs I sat between nine international telecom clients and the engineering team, and the part I kept reaching for was the part before the code: who has this problem, how do we know, and what do we build first. I'm looking for an Associate Product Manager role where that is the job rather than the margin of it."
+    "summary": "For the last two years at Amdocs, I worked where product, clients, and engineering met—turning vague requirements into software that shipped across nine international telecom accounts.\n\nThe part of the job I enjoyed most wasn’t writing code. It was understanding what users were actually trying to accomplish, deciding what mattered, and helping shape the solution before implementation began.\n\nOutside work, I built products from scratch to practice exactly that process—from identifying a problem and making product decisions to shipping live. I’m now looking for an Associate Product Manager role where I can continue learning under experienced product leaders while contributing from day one.\n\nI don't have the title yet—but I already think in terms of users, trade-offs, and outcomes. This portfolio is my evidence."
   },
   "seo": {
     "title": "Atandrit Chatterjee — Aspiring Product Manager",
@@ -51,73 +51,97 @@ window.SITE_CONTENT = {
   "metrics": [
     {
       "value": "9",
-      "label": "International accounts",
-      "detail": "Technical point of contact across Vodafone, Vivo, PLDT, VEON and Azercell"
+      "label": "Enterprise telecom accounts",
+      "detail": "Worked directly with clients, product owners and engineering teams across global telecom deployments."
     },
     {
       "value": "~2 yrs",
-      "label": "Shipping in production",
-      "detail": "Amdocs, Nov 2024 – Jul 2026, on live telecom systems"
+      "label": "Building production modules",
+      "detail": "From requirement clarification through production support and release management."
     },
     {
       "value": "2",
-      "label": "Products built solo",
-      "detail": "StatReads and Cadence, from problem definition to live deployment"
+      "label": "Products shipped end-to-end",
+      "detail": "From identifying the problem to making product decisions, building, and deploying live."
     },
     {
       "value": "10+",
-      "label": "Incidents resolved",
-      "detail": "First-line production support with root-cause analysis"
+      "label": "Production issues resolved",
+      "detail": "Using root-cause analysis, SQL, and customer feedback to improve future releases."
     }
   ],
   "whyPm": {
-    "heading": "How I got here",
+    "heading": "Why Product Management?",
     "paragraphs": [
-      "Requirements at Amdocs arrived half-formed more often than not. The conversation that followed was usually about implementation — which service to touch, what the schema should look like — and somewhere in it the question of what the client was actually trying to do would quietly go missing. I got into the habit of going back and asking.",
-      "That habit is where the useful work came from. Client teams were processing records one at a time because that was what the system allowed, and nobody had raised a defect, because nothing was technically broken. Bulk operations weren't on anyone's list until I went and watched how people were using the thing.",
-      "Two years of that convinced me the decisions that matter most sit before the ticket rather than inside it. StatReads and Cadence are what happened when I started making those calls myself, with nobody assigning them and no spec to work from."
+      "I didn’t decide to move into Product Management because I stopped enjoying engineering.",
+      "I decided because I became more interested in the decisions that happened before anyone started writing code.",
+      "At Amdocs, requirements rarely arrived complete. Clients described what they wanted, product owners balanced priorities, engineers considered implementation, and somewhere between those conversations, the real problem had to be uncovered.",
+      "I realised that those discussions were the part of the job I looked forward to most. Asking questions, understanding the user’s workflow, identifying missing context, and helping shape a solution before it reached implementation became more rewarding to me than the implementation itself.",
+      "One experience stayed with me.",
+      "Client teams were processing records one at a time because the system technically supported it. Nobody had raised it as a defect because nothing was “broken.” The problem only became obvious after understanding how people were actually using the product.",
+      "That taught me an important lesson: users don’t experience products through system architecture—they experience them through workflows.",
+      "Experiences like that changed how I approached software. Instead of asking, “How should we build this?”, I started asking:",
+      "* What problem are we actually solving?\n* Who experiences this problem every day?\n* Is this the most valuable thing to build right now?\n* What happens if we deliberately leave something out?",
+      "Since I wasn’t responsible for answering those questions professionally, I started answering them in my own projects. StatReads and Cadence became my way of practising product thinking end-to-end—finding problems, deciding scope, making trade-offs, shipping, and learning from the outcome.",
+      "That’s why I’m pursuing Product Management.",
+      "Not because I want to move away from engineering, but because I want to spend more of my time deciding what deserves to be built before thinking about how to build it."
     ]
   },
   "about": {
     "heading": "About me",
     "paragraphs": [
-      "I'm a software engineer. For nearly two years at Amdocs I worked across nine international telecom accounts as the person clients came to when a requirement was still unclear — sitting with them, working out what they actually needed, and translating it into something the team could build without a week of back-and-forth.",
-      "I haven't held a product title, and I'm not going to pretend otherwise. What I've done instead is run the whole loop myself on my own time. StatReads and Cadence are products I took from \"I think this problem is real\" through design decisions, deliberate scope cuts, and a live deployment. Nobody assigned them and nobody wrote the spec — that was the point."
+      "I’m a software engineer by title, but the work I naturally gravitated toward was never just writing code.",
+      "At Amdocs, I spent nearly two years working across nine international telecom accounts where requirements often arrived incomplete. Before engineers could build anything, someone had to understand what the client was actually trying to achieve, uncover the missing details, and translate that into something the team could confidently implement. I found myself enjoying those conversations just as much as the technical work that followed.",
+      "That experience changed how I think about building software. I stopped seeing features as tickets to implement and started seeing them as decisions about users, priorities, and trade-offs. Every technical choice exists because someone first decided what problem was worth solving.",
+      "Since I wasn’t making those decisions at work, I started making them on my own.",
+      "I built StatReads and Cadence from scratch—not because anyone asked me to, but because I wanted to practice the full product journey myself. That meant identifying a real problem, deciding what not to build, validating assumptions, making scope trade-offs, shipping something usable, and learning from the outcome.",
+      "I don’t claim to be a Product Manager already.",
+      "What I do claim is that I’ve already developed many of the habits that make good product managers effective: asking better questions, talking to users instead of guessing, making decisions with evidence whenever possible, and caring as much about why something should exist as how it gets built.",
+      "That’s the mindset I’m looking to bring into my first Associate Product Manager role."
     ]
   },
   "apmPitch": {
-    "heading": "Why hire me for an APM role",
-    "intro": "Everything here is checkable — against something on this page, or against something you can ask me about.",
+    "heading": "Why I Believe I’d Succeed in Product",
+    "intro": "I’m not applying because I already have Product Management experience. I’m applying because I want to build it. My goal is to join a team where I can learn from experienced Product Managers while contributing with a strong technical foundation, curiosity, and ownership from day one.",
     "lackHeading": "What I don't have",
     "lack": [],
     "bringHeading": "What I bring",
     "bring": [
-      "Two years shipping production software for nine international telecom clients, so I know the cost of what I'm asking engineers for when I ask for it.",
+      "Around two years of shipping production modules for nine international telecom clients, so I know the cost of what I'm asking engineers for when I ask for it.",
       "The client-facing half of the job already: requirement discovery, demos, user training, and being the person accounts escalate to.",
       "A shipped record outside work. StatReads and Cadence went from problem to live deployment with nobody assigning them.",
       "Comfort with data. I would rather answer a question with a SQL query than with an opinion.",
-      "Learning velocity you can check rather than take on trust — this site, and everything on it, is self-directed."
+      "Learning velocity — this site and everything on it is self-directed.",
+      "I know where I need to grow; I still have a lot to learn about areas like product strategy, experimentation, analytics, pricing, and user research. I’m looking for an environment where I can develop those skills under experienced Product Managers while contributing wherever I can."
     ]
   },
   "principles": {
-    "heading": "How I think about product",
-    "intro": "These come from two years of engineering rather than from managing a product. They're the things I've watched actually matter.",
+    "heading": "Principles That Guide My Decisions",
+    "intro": "These principles aren’t fixed. They’re the way I think today, and I expect them to evolve as I work with experienced Product Managers, learn from users, and build more products.",
     "items": [
       {
-        "title": "Talk to the person with the problem",
-        "body": "Requirements arrived vague at Amdocs because the person writing them was often guessing too. The fastest way past that was always a conversation, never a longer document."
+        "title": "Start with the workflow, not the feature",
+        "body": "Before thinking about solutions, I try to understand what someone is actually trying to accomplish. Users don’t wake up wanting another feature—they want to complete a task with less effort, less confusion, or fewer mistakes. Understanding that workflow usually reveals better solutions than starting with implementation."
       },
       {
-        "title": "Decide with evidence, not volume",
-        "body": "I'd rather run one SQL query against real usage than win an argument in a meeting. When there's no data yet, I say so out loud instead of dressing a guess up as a finding."
+        "title": "Every feature has an opportunity cost",
+        "body": "Every feature we build delays something else. That’s why I care as much about what gets left out as what gets included. A smaller product that solves one problem well is usually more valuable than a larger one that solves many problems poorly."
       },
       {
-        "title": "Scope is the real decision",
-        "body": "Almost anything is buildable. What you're actually choosing is what to leave out. Cadence only reached a live deployment because I cut it to sign-in and one core workflow."
+        "title": "Make trade-offs explicit",
+        "body": "Every product decision involves trade-offs between simplicity, flexibility, speed, cost, and long-term maintainability. I try to make those trade-offs consciously instead of treating them as accidental consequences."
       },
       {
-        "title": "Trust is a feature",
-        "body": "In StatReads I spent time showing users which API supplied each field instead of adding another chart. If people don't believe the numbers, the numbers don't matter."
+        "title": "Build trust before adding complexity",
+        "body": "Users are more likely to adopt a product they understand and trust than one with dozens of advanced features. Clear feedback, consistent behaviour, and transparency often create more value than feature count."
+      },
+      {
+        "title": "Ship, learn, improve",
+        "body": "I believe products improve through iteration. Shipping an MVP creates opportunities to learn from real usage, challenge assumptions, and make better decisions in future versions."
+      },
+      {
+        "title": "Good questions save more time than good code",
+        "body": "My engineering experience taught me that many problems originate long before implementation begins. Asking better questions during requirement discovery often prevents unnecessary work, rework, and misunderstandings later in the development process."
       }
     ]
   },
@@ -151,16 +175,16 @@ window.SITE_CONTENT = {
     ]
   },
   "projects": {
-    "heading": "Products I've built end to end",
+    "heading": "Product Case Studies",
     "intro": "Two products I built on my own time, partly so I'd have something real to point at. For each one the interesting part isn't the stack — it's what I chose not to build.",
     "items": [
       {
-        "title": "StatReads",
-        "subtitle": "Reading analytics dashboard",
-        "role": "Solo — problem definition, design, build, ship",
+        "title": "Case Study 1: StatReads",
+        "subtitle": "Helping Readers Understand Their Reading Habits",
+        "role": "I owned the product end-to-end—from identifying the problem and defining the MVP to making scope decisions, designing the experience, building the application, deploying it publicly, and iterating based on what I learned during development.",
         "status": "Live",
-        "problem": "Readers log hundreds of books on Goodreads and StoryGraph and get almost nothing back. The data exists; the insight doesn't. There was no way to see the cross-cutting patterns — which decades you gravitate toward, how your genre mix has shifted, where in the world your authors actually come from.",
-        "user": "",
+        "problem": "Readers already own years of reading data on platforms like Goodreads and StoryGraph, yet that data rarely answers the questions readers actually care about. It’s easy to see what you’ve read, but much harder to understand how your reading habits have evolved. StatReads was built to turn raw reading history into meaningful insights—revealing patterns across genres, authors, publication decades, and geography without requiring users to manually organise or clean their data.",
+        "user": "Avid readers who already maintain their reading history on Goodreads or StoryGraph but want deeper insights into their habits, trends, favourite genres, authors, and reading patterns over time.",
         "evidence": [],
         "decisions": [
           "Chose CSV import over an integration. StoryGraph has no public API and Goodreads retired theirs, so import was the only path that worked on day one — and it kept the app fully client-side, with no accounts and no data leaving the browser.",
@@ -169,7 +193,7 @@ window.SITE_CONTENT = {
           "Made those corrections compound. A fix can be submitted upstream into a shared file that ships with the app, so one reader correcting a bad publication year fixes it for everyone instead of every user repeating the same work.",
           "Layered three APIs behind a fallback pipeline (Open Library, then Google Books, then Wikidata) to maximise coverage, rather than picking one and living with the gaps."
         ],
-        "outcome": "10+ interactive visualisations across genre, decade, theme, author and geography — including a choropleth map. Runs entirely in the browser: no backend, no signup, no data collection.",
+        "outcome": "StatReads ships as a live, browser-based application with 10+ interactive visualisations across genres, authors, publication decades, and geography. It requires no backend, no account creation, and no user data leaves the browser, making it simple to use while preserving user privacy.",
         "metrics": [],
         "risks": [],
         "tags": [
@@ -183,12 +207,12 @@ window.SITE_CONTENT = {
         "github": "https://github.com/atandritC/StatReads"
       },
       {
-        "title": "Cadence",
-        "subtitle": "Project management REST API",
-        "role": "Solo — modelling, API design, deployment",
+        "title": "Case Study 2: Cadence",
+        "subtitle": "Designing a Project Management API from First Principles",
+        "role": "I designed and built the application independently—from deciding the feature set and database schema to implementing the backend, testing APIs with Postman, debugging issues, and deploying the application. Throughout the project I deliberately kept the scope small so I could focus on writing clean, maintainable code and finish a complete product instead of abandoning an overly ambitious one.",
         "status": "Live",
-        "problem": "I wanted to find out what it actually takes to model collaborative work — projects, tasks, assignment, progress — rather than implement endpoints from a spec somebody else had already thought through.",
-        "user": "",
+        "problem": "I wanted a practical project that would force me to build a complete backend instead of following isolated tutorials. Rather than creating another CRUD application with unrelated features, I chose to build a lightweight project planning tool that let me implement authentication, role-based access, project and task management, REST APIs, database design, validation, and deployment in one coherent application. The goal wasn’t to compete with tools like Jira—it was to learn how these building blocks fit together in a real product.",
+        "user": "Students, small personal projects, or anyone who wants a simple project and task tracker without the complexity of enterprise tools.",
         "evidence": [],
         "decisions": [
           "Started from the user's job, not the data model. I worked backwards from how a team creates a project, assigns work and checks progress, and let that decide what to model and expose.",
@@ -242,19 +266,25 @@ window.SITE_CONTENT = {
     "items": []
   },
   "skills": {
-    "heading": "Skills",
+    "heading": "What I Bring to an APM Role",
     "groups": [
       {
-        "group": "Product-Adjacent",
+        "group": "Customer Discovery",
         "items": [
-          "Requirement Gathering",
-          "Client & Stakeholder Conversations",
+          "Requirement Clarification",
+          "Client Communication",
           "Problem Framing",
-          "Scoping & Trade-offs",
-          "Writing Specs & Documentation",
-          "User Stories & Acceptance Criteria",
-          "Usability & User Needs",
-          "End-to-End Ownership"
+          "Product Demos",
+          "User Training"
+        ]
+      },
+      {
+        "group": "Product Thinking",
+        "items": [
+          "Prioritisation",
+          "MVP definition",
+          "Trade-off analysis",
+          "User-first mindset"
         ]
       },
       {
@@ -275,16 +305,6 @@ window.SITE_CONTENT = {
           "Production Support",
           "Incident Management",
           "SLAs"
-        ]
-      },
-      {
-        "group": "Customer-Facing",
-        "items": [
-          "Client Onboarding",
-          "Product Demos",
-          "User Training",
-          "Requirement Workshops",
-          "Written & Verbal Communication"
         ]
       },
       {
@@ -357,7 +377,7 @@ window.SITE_CONTENT = {
   ],
   "contact": {
     "heading": "Get in touch",
-    "blurb": "Find my portfolio interesting? You can drop a message, and I'll get back to you ASAP.",
+    "blurb": "Found my portfolio interesting? You can drop a message, and I'll get back to you ASAP.",
     "directHeading": "Or reach me directly",
     "successMessage": "Thanks for reaching out — I'll get back to you ASAP."
   },
