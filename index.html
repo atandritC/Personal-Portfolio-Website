@@ -2,176 +2,339 @@
 <html lang="en">
 
 <head>
-    <!-- Character encoding and responsive viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#550621" />
 
-    <!-- Browser tab title -->
-    <title>Atandrit Chatterje</title>
+    <!-- ===================================================================
+         SEO / SHARE PREVIEW
+         Social crawlers (LinkedIn, Slack, X, WhatsApp) do not run JavaScript,
+         so these tags have to be real HTML rather than rendered from
+         content.js. The admin panel rewrites them in place on publish -
+         the data-seo attributes are how it finds them, so don't remove them.
+         =================================================================== -->
+    <title data-seo="title">Atandrit Chatterjee — Aspiring Product Manager</title>
+    <meta name="description" data-seo="description"
+        content="Software engineer moving into product management. Nearly two years at Amdocs across 9 international telecom accounts, plus two products built solo from problem to live deployment. Looking for an Associate Product Manager role." />
+    <meta name="keywords" data-seo="keywords"
+        content="Aspiring Product Manager, Associate Product Manager, APM, Product Management, Career Transition, Requirement Gathering, Scoping, Prioritisation, SQL, Agile, Software Engineer to Product Manager, Atandrit Chatterjee" />
+    <meta name="author" content="Atandrit Chatterjee" />
+    <link rel="canonical" data-seo="canonical" href="https://atandritc.github.io/Personal-Portfolio-Website/" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/ac-monogram.jpg" type="image/jpg" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Atandrit Chatterjee" />
+    <meta property="og:title" data-seo="og:title"
+        content="Atandrit Chatterjee — Aspiring Product Manager" />
+    <meta property="og:description" data-seo="og:description"
+        content="Software engineer moving into product management. Nearly two years at Amdocs across 9 international telecom accounts, plus two products built solo from problem to live deployment. Looking for an Associate Product Manager role." />
+    <meta property="og:image" data-seo="og:image"
+        content="https://atandritc.github.io/Personal-Portfolio-Website/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" data-seo="og:url" content="https://atandritc.github.io/Personal-Portfolio-Website/" />
 
-    <!-- Google Fonts: Inter for body text, Poppins for headings -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" data-seo="twitter:title"
+        content="Atandrit Chatterjee — Aspiring Product Manager" />
+    <meta name="twitter:description" data-seo="twitter:description"
+        content="Software engineer moving into product management. Nearly two years at Amdocs across 9 international telecom accounts, plus two products built solo from problem to live deployment. Looking for an Associate Product Manager role." />
+    <meta name="twitter:image" data-seo="twitter:image"
+        content="https://atandritc.github.io/Personal-Portfolio-Website/assets/og-image.png" />
+
+    <!-- Favicons generated from the AC monogram -->
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
         rel="stylesheet" />
 
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured data so Google understands who this page is about -->
+    <script type="application/ld+json" id="ldJson">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Atandrit Chatterjee",
+      "jobTitle": "Aspiring Product Manager",
+      "email": "mailto:atandrit04chatterjee@gmail.com",
+      "url": "https://atandritc.github.io/Personal-Portfolio-Website/",
+      "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+      "sameAs": [
+        "https://www.linkedin.com/in/atandrit-chatterjee/",
+        "https://github.com/atandritC"
+      ]
+    }
+    </script>
+
+    <!-- Runs before first paint: avoids a flash of the wrong theme, and marks
+         the document as scripted so reveal-on-scroll sections aren't left
+         invisible if script.js never loads. -->
+    <script>
+        (function () {
+            var el = document.documentElement;
+            el.classList.add('js');
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                el.classList.add('dark');
+            }
+        })();
+    </script>
 </head>
 
 <body>
 
-    <!-- ===================== HEADER ===================== -->
-    <!-- Sticky bar: monogram logo, nav links, resume button, theme toggle -->
-    <header>
-        <a href="#hero" class="logo">Atandrit Chatterjee</a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-        <nav>
+    <!-- Reading position indicator, width driven by scroll in script.js -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="siteHeader">
+        <a href="#hero" class="logo" aria-label="Back to top">
+            <span class="logo-name" id="logoName">Atandrit Chatterjee</span>
+        </a>
+
+        <!-- Links whose target section is empty are removed by script.js -->
+        <nav id="primaryNav" aria-label="Primary">
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#whyPm">Background</a>
+            <a href="#caseStudies">Case Studies</a>
+            <a href="#projects">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#apmPitch">Why Me</a>
             <a href="#contact">Contact</a>
         </nav>
 
-        <!-- Right side actions -->
         <div class="header-actions">
-            <a href="assets/resume.pdf" download class="resume-btn">Resume</a>
-            <button id="themeToggle">Dark Mode</button>
+            <a href="assets/resume.pdf" id="headerResume" download="Atandrit_Chatterjee_Resume.pdf"
+                class="resume-btn">Resume</a>
+
+            <button id="themeToggle" type="button" aria-label="Toggle dark mode"></button>
+
+            <button id="navToggle" type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="primaryNav">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <!-- ===================== MAIN CONTENT ===================== -->
-    <main>
+    <!-- ===================== MAIN ===================== -->
+    <main id="main">
 
-        <!-- HERO: Full-screen opening section -->
+        <!-- HERO -->
         <section id="hero">
-
-            <!-- Animated particle background — drawn on canvas by script.js -->
-            <canvas id="particleCanvas"></canvas>
-
             <div class="hero-content">
-                <div class="hero-badge">Available for work &rarr;</div>
+                <a href="#contact" class="hero-badge" id="availabilityBadge" hidden></a>
 
-                <h2>Hi, I'm Atandrit</h2>
+                <h1 id="heroGreeting">Atandrit Chatterjee</h1>
 
-                <!-- Role text cycles through values via typewriter effect in script.js -->
-                <p class="hero-role">
-                    <span id="typedRole"></span><span class="type-cursor">|</span>
-                </p>
+                <p class="hero-role" id="heroTransition"></p>
 
-                <p class="hero-desc">Building modern web experiences with clean code and great design.</p>
+                <p class="hero-desc" id="heroSummary"></p>
 
-                <!-- Call-to-action buttons -->
                 <div class="hero-buttons">
-                    <a href="#projects">View My Work</a>
-                    <a href="assets/resume.pdf" download>Download Resume</a>
-                    <a href="#contact">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary" id="heroWorkCta">View my work</a>
+                    <a href="#whyPm" class="btn btn-outline">How I got here</a>
+                    <a href="assets/resume.pdf" id="heroResume" download="Atandrit_Chatterjee_Resume.pdf"
+                        class="btn btn-ghost">Download resume</a>
                 </div>
 
-                <!-- Animated line that bounces to hint the user to scroll -->
-                <div class="scroll-hint">
-                    <span>Scroll</span>
-                    <div class="scroll-line"></div>
-                </div>
+                <p class="hero-meta" id="heroMeta"></p>
             </div>
-
         </section>
 
-        <!-- ABOUT: Animates in when scrolled into view (data-animate) -->
+        <!-- METRICS: the 5-second version of the resume -->
+        <section id="metrics" class="band" data-animate aria-label="Key numbers">
+            <div class="metrics-grid" id="metricsGrid"></div>
+        </section>
+
+        <!-- ABOUT -->
         <section id="about" data-animate>
-            <h2>About Me</h2>
+            <h2 id="aboutHeading">About me</h2>
 
             <div class="about-content">
-                <!-- Profile picture -->
-                <img src="assets/pfp.jpg" alt="Atandrit's profile picture" width="220" height="220" />
+                <figure class="about-photo">
+                    <img src="assets/pfp.jpg" id="aboutPhoto" alt="Atandrit Chatterjee" width="240" height="240"
+                        loading="lazy" />
+                </figure>
 
-                <!-- Bio and skills -->
                 <div class="about-text">
-                    <p>
-                        I'm a developer with a love for clean code and great design.
-                        I enjoy turning ideas into real products that live on the web.
-                    </p>
-                    <p>
-                        Currently learning HTML, CSS, and JavaScript to build a strong
-                        foundation before moving into React.
-                    </p>
-
-                    <h3>Skills</h3>
-                    <!-- Skill pills rendered dynamically by script.js -->
-                    <ul id="skillsList"></ul>
+                    <div id="aboutParagraphs"></div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS: Cards rendered dynamically from data array in script.js -->
-        <section id="projects" data-animate>
-            <h2>My Projects</h2>
-            <div class="projects-grid" id="projectsGrid"></div>
+        <!-- THE SWITCH: tell the story and let the reader draw the conclusion -->
+        <section id="whyPm" data-animate hidden>
+            <h2 id="whyPmHeading">How I got here</h2>
+            <div class="prose" id="whyPmBody"></div>
         </section>
 
-        <!-- CONTACT: Two-column layout — form on left, links on right -->
+        <!-- PRODUCT CASE STUDIES -->
+        <section id="caseStudies" data-animate hidden>
+            <h2 id="caseStudiesHeading">Product case studies</h2>
+            <p class="section-intro" id="caseStudiesIntro"></p>
+            <div class="case-list" id="caseStudiesList"></div>
+        </section>
+
+        <!-- PRODUCTS BUILT -->
+        <section id="projects" data-animate hidden>
+            <h2 id="projectsHeading">Products I've built end to end</h2>
+            <p class="section-intro" id="projectsIntro"></p>
+            <div class="case-list" id="projectsGrid"></div>
+        </section>
+
+        <!-- TEARDOWNS -->
+        <section id="teardowns" data-animate hidden>
+            <h2 id="teardownsHeading">Product teardowns</h2>
+            <p class="section-intro" id="teardownsIntro"></p>
+            <div class="case-list" id="teardownsList"></div>
+        </section>
+
+        <!-- EXPERIMENTS -->
+        <section id="experiments" data-animate hidden>
+            <h2 id="experimentsHeading">Experiments</h2>
+            <p class="section-intro" id="experimentsIntro"></p>
+            <div class="case-list" id="experimentsList"></div>
+        </section>
+
+        <!-- PRINCIPLES -->
+        <section id="principles" data-animate hidden>
+            <h2 id="principlesHeading">How I think about product</h2>
+            <p class="section-intro" id="principlesIntro"></p>
+            <div class="principles-grid" id="principlesGrid"></div>
+        </section>
+
+        <!-- FRAMEWORK TOOLKIT -->
+        <section id="frameworks" data-animate hidden>
+            <h2 id="frameworksHeading">Frameworks I reach for</h2>
+            <p class="section-intro" id="frameworksIntro"></p>
+            <div class="framework-table" id="frameworksList"></div>
+        </section>
+
+        <!-- PRODUCT OBSERVATIONS -->
+        <section id="observations" data-animate hidden>
+            <h2 id="observationsHeading">Product observations</h2>
+            <p class="section-intro" id="observationsIntro"></p>
+            <div class="observation-list" id="observationsList"></div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" data-animate hidden>
+            <h2 id="experienceHeading">Experience</h2>
+            <div class="timeline" id="experienceList"></div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" data-animate hidden>
+            <h2 id="skillsHeading">Skills</h2>
+            <div class="skills-grid" id="skillsGrid"></div>
+        </section>
+
+        <!-- WHAT I'M LEARNING -->
+        <section id="learning" data-animate hidden>
+            <h2 id="learningHeading">What I'm learning</h2>
+            <p class="section-intro" id="learningIntro"></p>
+            <div class="learning-list" id="learningList"></div>
+        </section>
+
+        <!-- PRODUCT WRITING -->
+        <section id="writing" data-animate hidden>
+            <h2 id="writingHeading">Product writing</h2>
+            <p class="section-intro" id="writingIntro"></p>
+            <div class="writing-list" id="writingList"></div>
+        </section>
+
+        <!-- WHY HIRE ME FOR AN APM ROLE: addresses the gap head-on -->
+        <section id="apmPitch" data-animate hidden>
+            <h2 id="apmPitchHeading">Why hire me for an APM role</h2>
+            <p class="section-intro" id="apmPitchIntro"></p>
+
+            <div class="ledger">
+                <div class="ledger-col ledger-lack">
+                    <h3 id="apmLackHeading">What I don't have</h3>
+                    <ul id="apmLackList"></ul>
+                </div>
+                <div class="ledger-col ledger-bring">
+                    <h3 id="apmBringHeading">What I bring</h3>
+                    <ul id="apmBringList"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION + COURSES -->
+        <section id="education" data-animate hidden>
+            <div class="two-col">
+                <div id="eduBlock">
+                    <h2 id="educationHeading">Education</h2>
+                    <div class="edu-list" id="educationList"></div>
+                </div>
+                <div id="certsBlock" hidden>
+                    <h2 id="certificationsHeading">Courses &amp; certifications</h2>
+                    <div class="edu-list" id="certificationsList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
         <section id="contact" data-animate>
-            <h2>Get In Touch</h2>
+            <h2 id="contactHeading">Get in touch</h2>
 
             <div class="contact-layout">
-
-                <!-- Left: contact form -->
                 <div class="contact-form-wrapper">
-                    <p>Have a project in mind or just want to say hi?</p>
+                    <p class="section-intro" id="contactBlurb"></p>
 
-                    <!-- Form submission and validation handled by script.js -->
-                    <form id="contactForm">
+                    <form id="contactForm" novalidate>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Your name" />
+                            <input type="text" id="name" name="name" autocomplete="name" required
+                                placeholder="Your name" />
+                            <span class="field-error" id="nameError"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="your@email.com" />
+                            <input type="email" id="email" name="email" autocomplete="email" required
+                                placeholder="you@company.com" />
+                            <span class="field-error" id="emailError"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" placeholder="Write your message here..."></textarea>
+                            <textarea id="message" name="message" required
+                                placeholder="What's the role, or what's on your mind?"></textarea>
+                            <span class="field-error" id="messageError"></span>
                         </div>
 
-                        <button type="submit">Send Message</button>
+                        <!-- Honeypot: bots fill this, humans never see it -->
+                        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true" />
+
+                        <button type="submit" id="contactSubmit" class="btn btn-solid">Send message</button>
                     </form>
 
-                    <!-- Hidden by default — shown by JS after successful submission -->
-                    <p class="form-success" id="formSuccess">
-                        Thanks for reaching out! I'll get back to you soon ✓
-                    </p>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </div>
 
-                <!-- Right: direct contact links with labels -->
-                <div class="contact-links">
-                    <h3>Or reach me directly</h3>
-                    <ul>
-                        <li>
-                            <a href="mailto:atandrit04chatterjee@gmail.com">
-                                <span class="link-label">Email</span>
-                                atandrit04chatterjee@gmail.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/atandritC/" target="_blank">
-                                <span class="link-label">GitHub</span>
-                                github.com/atandritC
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/atandrit-chatterjee/" target="_blank">
-                                <span class="link-label">LinkedIn</span>
-                                linkedin.com/in/atandrit-chatterjee
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <aside class="contact-links">
+                    <h3 id="contactDirectHeading">Or reach me directly</h3>
+                    <ul id="socialsList"></ul>
 
+                    <a href="assets/resume.pdf" id="asideResume" download="Atandrit_Chatterjee_Resume.pdf"
+                        class="resume-card">
+                        <span class="resume-card-label">Download</span>
+                        <span class="resume-card-title">Resume (PDF)</span>
+                        <span class="resume-card-meta" id="resumeUpdated"></span>
+                    </a>
+                </aside>
             </div>
         </section>
 
@@ -179,15 +342,13 @@
 
     <!-- ===================== FOOTER ===================== -->
     <footer>
-        <p>Designed &amp; Built by Atandrit &copy; 2026</p>
-        <div class="footer-links">
-            <a href="https://github.com/atandritC/" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/atandrit-chatterjee/" target="_blank">LinkedIn</a>
-            <a href="mailto:atandrit04chatterjee@gmail.com">Email</a>
-        </div>
+        <p id="footerNote">Built and maintained by Atandrit Chatterjee</p>
+        <div class="footer-links" id="footerLinks"></div>
     </footer>
 
-    <!-- Main JavaScript — loaded last so all HTML elements exist first -->
+    <button id="backToTop" type="button" class="back-to-top" aria-label="Back to top" hidden>&uarr;</button>
+
+    <script src="content.js"></script>
     <script src="script.js"></script>
 
 </body>

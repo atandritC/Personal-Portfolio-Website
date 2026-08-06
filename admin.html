@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This page must never show up in search results -->
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow" />
+
+    <title>Site admin — Atandrit Chatterjee</title>
+
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body>
+
+    <!-- ===================================================================
+         CONNECT GATE
+         Shown until a GitHub token has been validated.
+         =================================================================== -->
+    <div class="gate" id="gate">
+        <div class="gate-card">
+            <div class="gate-brand">
+                <img src="assets/ac-logo.png" alt="" width="42" height="42" />
+                <div>
+                    <h1>Site admin</h1>
+                    <p>Edit your portfolio and publish it live.</p>
+                </div>
+            </div>
+
+            <form id="connectForm">
+                <div class="row">
+                    <div class="field">
+                        <label for="ghOwner">GitHub username</label>
+                        <input id="ghOwner" type="text" spellcheck="false" autocomplete="off" value="atandritC" />
+                    </div>
+                    <div class="field">
+                        <label for="ghRepo">Repository</label>
+                        <input id="ghRepo" type="text" spellcheck="false" autocomplete="off"
+                            value="Personal-Portfolio-Website" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="ghBranch">Branch</label>
+                    <input id="ghBranch" type="text" spellcheck="false" autocomplete="off" value="main" />
+                    <p class="hint">Whichever branch GitHub Pages builds from — usually <code>main</code>.</p>
+                </div>
+
+                <div class="field">
+                    <label for="ghToken">GitHub access token</label>
+                    <input id="ghToken" type="password" spellcheck="false" autocomplete="off"
+                        placeholder="github_pat_… or ghp_…" />
+                    <p class="hint">
+                        Create a <strong>fine-grained</strong> token at
+                        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank"
+                            rel="noopener">github.com/settings → personal access tokens</a>.
+                        Limit it to <em>only this repository</em> and give it a single permission:
+                        <strong>Contents → Read and write</strong>. Nothing else.
+                    </p>
+                </div>
+
+                <label class="check">
+                    <input type="checkbox" id="ghRemember" />
+                    <span>Remember this token on this device</span>
+                </label>
+                <p class="hint warn" id="rememberWarning" hidden>
+                    Only tick this on a computer that is yours alone. The token is stored in this browser and
+                    anyone with access to it could push to your repository.
+                </p>
+
+                <button type="submit" class="btn primary block" id="connectBtn">Connect</button>
+                <p class="status" id="connectStatus" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="gate-foot">
+                Prefer not to connect? <button type="button" class="linkish" id="offlineBtn">Edit offline and
+                    download the file instead</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         EDITOR
+         =================================================================== -->
+    <div class="app" id="app" hidden>
+
+        <aside class="sidebar">
+            <a class="side-brand" href="index.html">
+                <img src="assets/ac-logo.png" alt="" width="30" height="30" />
+                <span>Site admin</span>
+            </a>
+
+            <nav class="side-nav" id="sideNav" aria-label="Editor sections"></nav>
+
+            <div class="side-foot">
+                <p class="repo-line" id="repoLine"></p>
+                <button type="button" class="linkish" id="disconnectBtn">Disconnect</button>
+            </div>
+        </aside>
+
+        <main class="editor">
+
+            <!-- Quick actions: the things changed most often -->
+            <div class="quickbar">
+                <div class="quick-status">
+                    <span class="quick-label">Job-hunting status</span>
+                    <div class="segmented" id="quickStatus" role="group" aria-label="Availability status">
+                        <button type="button" data-status="open">Open to work</button>
+                        <button type="button" data-status="selective">Open to the right role</button>
+                        <button type="button" data-status="closed">Not looking</button>
+                    </div>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" id="quickShowBadge" />
+                    <span class="switch-track" aria-hidden="true"></span>
+                    <span class="switch-label">Show the pill on the site</span>
+                </label>
+            </div>
+
+            <div class="panels" id="panels"></div>
+
+        </main>
+
+        <!-- Sticky publish bar -->
+        <div class="publishbar">
+            <div class="publish-info">
+                <span class="dot" id="dirtyDot"></span>
+                <span id="dirtyText">No unsaved changes</span>
+            </div>
+
+            <div class="publish-actions">
+                <button type="button" class="btn ghost" id="previewBtn">Preview</button>
+                <button type="button" class="btn ghost" id="downloadBtn">Download backup</button>
+                <button type="button" class="btn ghost" id="revertBtn">Discard changes</button>
+                <button type="button" class="btn primary" id="publishBtn">Publish to site</button>
+            </div>
+        </div>
+
+        <p class="publish-status" id="publishStatus" role="status" aria-live="polite"></p>
+    </div>
+
+    <script src="content.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
