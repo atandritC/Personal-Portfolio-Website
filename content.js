@@ -4,10 +4,11 @@
    You should not need to edit this by hand. Open admin.html, make
    your changes there, and hit Publish.
 
-   Sections whose item list is empty are hidden on the live site, and
-   their nav links disappear with them. That is how the case studies,
-   teardowns, experiments, observations, frameworks and learning
-   sections stay out of the way until you have written something.
+   Sections whose item list is empty are hidden on the live site,
+   and their nav links disappear with them. That is how the case
+   studies, teardowns, experiments, observations, frameworks and
+   learning sections stay out of the way until you have written
+   something.
    ============================================================ */
 
 window.SITE_CONTENT = {
@@ -32,8 +33,8 @@ window.SITE_CONTENT = {
   "profile": {
     "name": "Atandrit Chatterjee",
     "initials": "AC",
-    "title": "Aspiring Product Manager",
-    "transition": "Associate Software Engineer → Aspiring Product Manager",
+    "title": "",
+    "transition": "An Aspiring Product Manager",
     "location": "Pune, India",
     "email": "atandrit04chatterjee@gmail.com",
     "phone": "+91 95064 11839",
@@ -138,7 +139,14 @@ window.SITE_CONTENT = {
           "Coordinated releases across lower and production environments with product, QA and infrastructure — sequencing dependencies, planning go-lives, and reducing rollback risk.",
           "Drove adoption of what we shipped through SQL-based analysis, client demos, user training, and runbook and knowledge-base documentation."
         ],
-        "tags": ["Requirement Gathering", "Client Communication", "Release Management", "SQL", "Incident Management", "Product Demos"]
+        "tags": [
+          "Requirement Gathering",
+          "Client Communication",
+          "Release Management",
+          "SQL",
+          "Incident Management",
+          "Product Demos"
+        ]
       }
     ]
   },
@@ -164,7 +172,13 @@ window.SITE_CONTENT = {
         "outcome": "10+ interactive visualisations across genre, decade, theme, author and geography — including a choropleth map. Runs entirely in the browser: no backend, no signup, no data collection.",
         "metrics": [],
         "risks": [],
-        "tags": ["JavaScript", "HTML5 Canvas", "Open Library API", "Google Books API", "Wikidata"],
+        "tags": [
+          "JavaScript",
+          "HTML5 Canvas",
+          "Open Library API",
+          "Google Books API",
+          "Wikidata"
+        ],
         "live": "https://atandritc.github.io/StatReads",
         "github": "https://github.com/atandritC/StatReads"
       },
@@ -184,7 +198,14 @@ window.SITE_CONTENT = {
         "outcome": "Running publicly with interactive Swagger docs and secured sign-in, so anyone can try the API in the browser without cloning anything.",
         "metrics": [],
         "risks": [],
-        "tags": ["Java", "Spring Boot", "PostgreSQL", "REST", "Swagger / OpenAPI", "Render"],
+        "tags": [
+          "Java",
+          "Spring Boot",
+          "PostgreSQL",
+          "REST",
+          "Swagger / OpenAPI",
+          "Render"
+        ],
         "live": "https://cadence-t6ui.onrender.com/swagger-ui.html",
         "github": "https://github.com/atandritC/Cadence"
       }
@@ -225,27 +246,73 @@ window.SITE_CONTENT = {
     "groups": [
       {
         "group": "Product-Adjacent",
-        "items": ["Requirement Gathering", "Client & Stakeholder Conversations", "Problem Framing", "Scoping & Trade-offs", "Writing Specs & Documentation", "User Stories & Acceptance Criteria", "Usability & User Needs", "End-to-End Ownership"]
+        "items": [
+          "Requirement Gathering",
+          "Client & Stakeholder Conversations",
+          "Problem Framing",
+          "Scoping & Trade-offs",
+          "Writing Specs & Documentation",
+          "User Stories & Acceptance Criteria",
+          "Usability & User Needs",
+          "End-to-End Ownership"
+        ]
       },
       {
         "group": "Data & Decisions",
-        "items": ["SQL", "Data Analysis", "Log Analysis", "Root Cause Analysis", "Evidence-Based Decisions"]
+        "items": [
+          "SQL",
+          "Log Analysis",
+          "Root Cause Analysis",
+          "Evidence-Based Decisions"
+        ]
       },
       {
         "group": "Delivery",
-        "items": ["Agile / Scrum", "Release Management", "Cross-Functional Coordination", "Production Support", "Incident Management", "SLAs"]
+        "items": [
+          "Agile / Scrum",
+          "Release Management",
+          "Cross-Functional Coordination",
+          "Production Support",
+          "Incident Management",
+          "SLAs"
+        ]
       },
       {
         "group": "Customer-Facing",
-        "items": ["Client Onboarding", "Product Demos", "User Training", "Requirement Workshops", "Written & Verbal Communication"]
+        "items": [
+          "Client Onboarding",
+          "Product Demos",
+          "User Training",
+          "Requirement Workshops",
+          "Written & Verbal Communication"
+        ]
       },
       {
         "group": "Tools",
-        "items": ["Jira", "Confluence", "Postman", "DBeaver", "Figma", "Git", "MobaXterm", "Cursor", "ChatGPT"]
+        "items": [
+          "Jira",
+          "Confluence",
+          "Postman",
+          "DBeaver",
+          "Figma",
+          "Git",
+          "MobaXterm",
+          "Cursor",
+          "ChatGPT"
+        ]
       },
       {
         "group": "Technical",
-        "items": ["Core Java", "Spring Boot", "REST APIs", "JSON / XML", "PostgreSQL", "JavaScript", "Linux / Unix", "Debugging"]
+        "items": [
+          "Core Java",
+          "Spring Boot",
+          "REST APIs",
+          "JSON / XML",
+          "PostgreSQL",
+          "JavaScript",
+          "Linux / Unix",
+          "Debugging"
+        ]
       }
     ]
   },
@@ -290,9 +357,9 @@ window.SITE_CONTENT = {
   ],
   "contact": {
     "heading": "Get in touch",
-    "blurb": "If you're hiring an APM and open to someone making the switch from engineering, I'd like to hear from you. I reply to everything.",
+    "blurb": "Find my portfolio interesting? You can drop a message, and I'll get back to you ASAP.",
     "directHeading": "Or reach me directly",
-    "successMessage": "Thanks for reaching out — I'll get back to you within a day."
+    "successMessage": "Thanks for reaching out — I'll get back to you ASAP."
   },
   "footer": {
     "note": "Built and maintained by Atandrit Chatterjee"
